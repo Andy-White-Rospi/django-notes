@@ -13,14 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-from tasks import views
 
+from django.contrib import admin
+from tasks import views
+from django.urls import path
+from tasks.views import RegistroTipo1, RegistroTipo2
 urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
-    path('signup/', views.signup, name='signup'),
+    path('signup/', views.RegistroTipo2.as_view(), name='signup'),
     path('tasks/', views.tasks, name='tasks'),
     path('tasks_completed/', views.tasks_completed, name='tasks_completed'),
     path('logout/', views.signout, name='logout'),
@@ -35,4 +36,7 @@ urlpatterns = [
     path('official_permit_for_hours/', views.official_permit_for_hours, name='official_permit_for_hours'),
     path('personal_leave_with_pay/', views.personal_leave_with_pay, name='personal_leave_with_pay'),
     path('vacation_account_request/', views.vacation_account_request, name='vacation_account_request'),
+    path('signup_RRHH/', views.RegistroTipo1.as_view(), name='user_RRHH'),
+    # path('signup_RRHH/', views.RegistroTipo1, name='user_RRHH'),
+    path('adentro/',views.adentro,name='adentro'),
 ]
