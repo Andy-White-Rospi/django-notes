@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'djangocrud.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rrhh',
+        'USER': 'postgres',
+        'PASSWORD': 'example',
+        'HOST': 'debian-server.brazilsouth.cloudapp.azure.com',
+        'PORT': '5432',
     }
 }
 

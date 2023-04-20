@@ -1,0 +1,33 @@
+{% extends 'base.html' %}{% block content %}
+
+    <div class="container">
+        <h1>Registro RRHH</h1>
+        {{ error }}
+        <form action="/signup_RRHH/" method="POST">
+            {% csrf_token %} {{ form.as_p }}
+
+            {#        <div class="col-5">#}
+            {#        <label for="reason" class="col-1 col-form-label">Nombre:</label>#}
+            {#                <input name="nombre" type="text" class="form-control" id="reason"/>#}
+            {#        </div>#}
+            {##}
+            {##}
+            {#        <label for="detail" class="col-3 col-form-label">Apellido paterno:</label>#}
+            {#        <div class="col-5">#}
+            {#                <input name="a_paterno" type="text" class="form-control" id="detail"/>#}
+            {#        </div>#}
+            {##}
+            {#        <label for="detail" class="col-3 col-form-label">Apellido materno:</label>#}
+            {#        <div class="col-5">#}
+            {#                <input name="a_materno" type="text" class="form-control" id="detail"/>#}
+            {#        </div>#}
+            {##}
+            {#      <label for="reason" class="col-1 col-form-label">Item:</label>#}
+            {#        <div class="col-5">#}
+            {#                <input name="item" type="number" class="form-control" id="reason"/>#}
+            {#        </div>#}
+            <button>Save</button>
+        </form>
+
+    </div>
+{% endblock %}
